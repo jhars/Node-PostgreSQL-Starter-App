@@ -1,0 +1,11 @@
+var express = require('express');
+var router = express.Router();
+var db = require('../controllers/users.js');
+
+router.get('/', db.getAllUsers);
+router.get('/:id', db.getSingleUser);
+router.post('/', db.createUser);
+router.put('/:id', db.updateUser);
+router.delete('/:id', db.removeUser);
+
+module.exports = router;
